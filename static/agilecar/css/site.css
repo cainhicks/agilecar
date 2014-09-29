@@ -1,0 +1,44 @@
+﻿body
+{
+    position: relative;   
+}
+
+header
+{
+    width: 99%;
+    height: 10%;
+    border-style: dashed;
+    background-color: Navy;
+    color: White;
+}
+
+footer
+{
+    width: 99%;
+    height: 10%;
+    border-style: dashed;
+}
+
+nav
+{
+    width: 99%;
+    height: 5%;
+    border-style: dashed;
+}
+
+#content
+{
+    width: 99%;
+    height: 75%;
+    border-style: dashed;
+}
+
+.questionHidden
+{
+    display: none;
+}
+
+.questionVisible
+{
+    display: inherit;
+}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Post a Job{% endblock %}
+{% block styles %}{% endblock %}
+{% block scripts %}{% endblock %}
+{% block content %}
+    <div>
+        job.title
+    </div>
+    <form action="/jobposting/apply/{{ job.id }}/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br />
+        <br />
+        <input type="submit" id="submit" name="submit" value="Apply" />
+    </form>
+{% endblock %}
+{% block body_scripts %}{% endblock %}

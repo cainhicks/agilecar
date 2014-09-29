@@ -1,0 +1,9 @@
+﻿.questionHidden
+{
+    display: none;
+}
+
+.questionVisible
+{
+    display: inherit;
+}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} {{ job.title }} {% endblock %}
+{% block styles %}{% endblock %}
+{% block scripts %}{% endblock %}
+{% block content %}
+    <div id="id"> {{ job.id }}</div>
+    <br />
+    <div id="title"> {{ job.title }}</div>
+    <br />
+    <div id="description"> {{ job.description }}</div>
+    <br />
+    <div id="post_date"> {{ job.posted_date }}</div>
+    <br />
+    <div id="expire_date"> {{ job.expire_date }}</div>
+    <br />
+    <div id="apply">
+        <a href="/jobposting/apply/{{ job.id }}">Apply</a>
+    </div>
+{% endblock %}
+{% block body_scripts %}{% endblock %}

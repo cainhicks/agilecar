@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <title>Agile Car {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'agilecar/css/site.css' %}" />
+    {% block styles %}{% endblock %}
+    <script type="text/javascript" src="{% static 'agilecar/js/jquery.js' %}"></script>
+    {% block scripts %}
+    
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <h1>Agile Car Header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/jobposting/search">Find a Job</a>
+            </li>
+            <li>
+                <a href="/jobposting/postajob">Post a Job</a>
+            </li>
+            <!-- li>
+                <a href="/jobposting/"></a>
+            </li -->
+        </ul>
+    </nav>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+    </footer>
+    {% block body_scripts %}{% endblock %}
+</body>
+</html>

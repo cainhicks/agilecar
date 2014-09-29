@@ -1,0 +1,31 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Create Screeners{% endblock %}
+{% block styles %}
+{% endblock %}
+{% block scripts %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'agilecar/js/screeners.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <form action="/screeners/create/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="screenerContainer" name="screenerContainer">
+            <div id="typeSelectorContainer" name="typeSelectorContainer">
+                <input type="radio" id="screenerFreeForm" name="screenerType" 
+                value="Free Form" checked="checked" />Free Form
+                <input type="radio" id="screenerMultipleChoice" name="screenerType" 
+                value="Multiple Choice" />Multiple Choice
+                <div id="screenerQuestionPlaceHolder">
+                </div>
+                <!-- input type="number" id="orderNumber" /-->
+            </div>
+        </div>
+        
+        <input type="button" id="btnAddQuestion" name="btnAddQuestion" value="Add" onclick="buildScreenerQuestions();" />
+        <input type="submit" id="submit" name="submit" value="Create" />
+    </form>
+    
+{% endblock %}
+{% block body_scripts %}{% endblock %}
