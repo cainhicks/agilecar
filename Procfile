@@ -1,1 +1,1 @@
-web: gunicorn agilecar.wsgi --log-file -
+web: gunicorn agilecar.wsgi -b 0.0.0.0:$PORT
