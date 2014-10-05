@@ -12,6 +12,8 @@
         {{ form.as_p }}
         <br />
         <br />
+        {% if job.has_screener %}
+        {% endif %}
         <input type="submit" id="submit" name="submit" value="Apply" />
     </form>
 {% endblock %}

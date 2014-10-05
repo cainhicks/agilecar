@@ -25,8 +25,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="agilecar.py" />
+    <Compile Include="agilecar\objectmapper.py" />
     <Compile Include="agilecar\settings.py" />
     <Compile Include="agilecar\urls.py" />
+    <Compile Include="agilecar\views.py" />
     <Compile Include="agilecar\wsgi.py" />
     <Compile Include="agilecar\__init__.py" />
     <Compile Include="application\admin.py" />
@@ -37,6 +39,7 @@
     <Compile Include="application\views.py" />
     <Compile Include="application\__init__.py" />
     <Compile Include="jobposting\admin.py" />
+    <Compile Include="jobposting\forms.py" />
     <Compile Include="jobposting\migrations\__init__.py" />
     <Compile Include="jobposting\models.py" />
     <Compile Include="jobposting\tests.py" />
@@ -100,12 +103,18 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agilecar\templates\agilecar\index.html" />
+    <Content Include="application\templates\application\apply.html" />
+    <Content Include="jobposting\templates\jobposting\index.html" />
+    <Content Include="jobposting\templates\jobposting\postjob.html" />
+    <Content Include="jobposting\templates\jobposting\search.html" />
+    <Content Include="jobposting\templates\jobposting\view.html" />
     <Content Include="static\agilecar\css\site.css" />
     <Content Include="static\agilecar\js\jquery.js" />
     <Content Include="agilecar\templates\agilecar\base.html" />
     <Content Include="application\templates\base.html" />
     <Content Include="screener\static\screener\css\createscreener.css" />
-    <Content Include="screener\static\screener\js\screeners.js" />
+    <Content Include="static\agilecar\js\screeners.js" />
     <Content Include="screener\templates\screener\create.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

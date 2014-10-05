@@ -1,6 +1,6 @@
 import logging
 
-logger = logging.getLogger('jobposting')
+logger = logging.getLogger(__name__)
 
 def map(from_obj, to_obj):
     for index, name in enumerate(from_obj.cleaned_data):

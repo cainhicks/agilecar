@@ -24,6 +24,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates"),
+)
+
 ALLOWED_HOSTS = []
 
 
@@ -132,10 +136,26 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
+        'agilecar': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+        },
         'jobposting': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
+        },
+        'application': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+        },
+        'screener': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
         }
+
     }
 }
 
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'

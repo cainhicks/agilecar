@@ -27,7 +27,8 @@ def create_screener(request):
         if form.is_valid():
             #form.parseJson()
             screener = Screener()
-            objectmapper.map(form, screener)
-            return HttpResponse(str(extra))
+            screener.name = form.cleaned_data['name']
+            screener.save_screeners(form.questions_as_dict())
+            return HttpResponse(str(screener.id))
 
     return render(request, 'screener/create.html', {'form': form})

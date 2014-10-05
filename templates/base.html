@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <title>Agile Car {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'agilecar/css/bootstrap.css' %}" />
+    <!-- link rel="stylesheet" type="text/css" href="{% static 'agilecar/css/site.css' %}" / -->
+    {% block styles %}{% endblock %}
+    <script type="text/javascript" src="{% static 'agilecar/js/jquery.js' %}"></script>
+    {% block scripts %}
+    
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <h1>Agile Car Header</h1>
+    </header>
+    <nav>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/jobposting/search">Find a Job</a>
+            </li>
+            <li>
+                <a href="/jobposting/postajob">Post a Job</a>
+            </li>
+            <!-- li>
+                <a href="/jobposting/"></a>
+            </li -->
+        </ul>
+        <div id="login_area">
+            
+            {% if user.is_authenticated %}
+                <span>Welcome {{ user.username }}</span>
+            {% else %}
+                <a href="#" onclick="JavaScript: toggleDisplaly('login')">login</a>&nbsp;
+                <div id="login" style="display: none;>
+                    <form id="login_form" action="/account/login" method="post" >
+                        {{ login_form.as_p }}
+                        <input type="submit" value="login" />
+                    </form>
+                </div>
+                <a href="#" onclick="JavaScript: toggleDisplaly('register')">register</a>
+                <div id="register" style="display: none;>
+                    <form id="register_form" action="/account/register" method="post" >
+                        {{ register_form.as_p }}
+                        <input type="submit" value="register" />
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    <div id="content" class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+    </footer>
+    <script type="text/javascript" src="{% static 'agilecar/js/bootstrap.js' %}"></script>
+    <script type="text/javascript">
+        function toggleDisplaly(ele_name) {
+            var ele = document.getElementById(ele_name);
+            if (ele.style.display == 'block') {
+                ele.style.display = 'none';
+            } else {
+                ele.style.display = 'block';
+            }
+        }
+    </script>
+    {% block body_scripts %}{% endblock %}
+</body>
+</html>

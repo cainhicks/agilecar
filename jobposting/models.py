@@ -1,4 +1,5 @@
 from django.db import models
+from screener.models import Screener
 
 # Create your models here.
 class Job(models.Model):
@@ -10,9 +11,10 @@ class Job(models.Model):
     created_date = models.DateTimeField('created date')
     posted_date = models.DateTimeField('posted date')
     expire_date = models.DateTimeField('expire date')
-    has_screener = models.BooleanField()
-    is_active = models.BooleanField()
-    is_approved = models.BooleanField()
+    screener = models.ForeignKey(Screener, null = True)
+    has_screener = models.BooleanField(default = False)
+    is_active = models.BooleanField(default = False)
+    is_approved = models.BooleanField(default = False)
 
     def __unicode__(self):
         return self.title

@@ -13,3 +13,4 @@ def index(request):
 
 def view(request):
     return HttpResponse('view')
+
