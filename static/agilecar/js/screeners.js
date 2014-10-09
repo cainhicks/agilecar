@@ -12,30 +12,41 @@ function buildScreenerQuestions() {
 
 function buildFreeFormQuestion() {
     var id = createId()
-    var container = createContinerElement(id, 'questionVisible');
+    var row = createContinerElement('row' + id, 'row');
+    var container = createContinerElement(id, 'col-md-4');
     id = 'questionText_' + questionIndex.toString();
     var label = createLabel(id, 'Question Text');
     var input = createInput(id, 'text', '');
     container.appendChild(label);
     container.appendChild(input);
-    document.getElementById('screenerQuestionPlaceHolder').appendChild(container).appendChild(createBr());
+    row.appendChild(container);
+    document.getElementById('screenerQuestionPlaceHolder').appendChild(row).appendChild(createBr());
 }
 
 function buildMulipleChoiceQuestion() {
     var id = createId();
-    var container = createContinerElement(id, 'questionVisible');
+    var row = createContinerElement('row' + id, 'row');
+    var container = createContinerElement(id, 'col-md-4');
     id = 'questionText_' + questionIndex.toString();
     var label = createLabel(id, 'Question Text');
     var questionInput = createInput(id, 'text', '');
-    var answerInput = createInput(createAnswerId(), 'text', '');
+    var answer_id = createAnswerId();
+    var answer_label = createLabel(answer_id, "Answer Text");
+    var answerInput = createInput(answer_id, 'text', '');
     var button = createInput('btnAdd', 'button', 'Add Answer');
     button.setAttribute('onclick', 'addQuestionAnswer()');
     container.appendChild(label);
     container.appendChild(questionInput);
+    container.appendChild(createBr());
+    container.appendChild(createBr());
+    container.appendChild(answer_label);
     container.appendChild(answerInput);
+    container.appendChild(createBr());
+    container.appendChild(createBr());
     container.appendChild(button);
+    row.appendChild(container);
     document.getElementById('screenerQuestionPlaceHolder')
-    .appendChild(container)
+    .appendChild(row)
     .appendChild(createBr());
     
 }
@@ -73,9 +84,11 @@ function addQuestionAnswer() {
     var id = createAnswerId();
     var label = createLabel(id, 'Answer Text');
     var input = createInput(id, 'text', '');
-    container.appendChild(label);
-    container.appendChild(input);
-    container.appendChild(createBr());
+    var btn = document.getElementById('btnAdd');
+    container.insertBefore(label, btn);
+    container.insertBefore(input, btn);
+    container.insertBefore(createBr(), btn);
+    container.insertBefore(createBr(), btn);
 }
 
 function createId() {

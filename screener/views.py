@@ -4,7 +4,7 @@ from django.utils import timezone
 
 from screener.screeners import get_questions
 from screener import forms
-from screener.models import Screener
+from screener.models import Screener, load_screener
 
 from agilecar import objectmapper
 
@@ -30,5 +30,19 @@ def create_screener(request):
             screener.name = form.cleaned_data['name']
             screener.save_screeners(form.questions_as_dict())
             return HttpResponse(str(screener.id))
+    
 
     return render(request, 'screener/create.html', {'form': form})
+
+def edit(request, screener_id):
+    extra = get_questions(request)
+    form = forms.ScreenrForm(request.POST or None, extra = extra)
+    screener = load_screener(screener_id)
+    if request.method == 'POST':
+        if form.is_valid():
+            screener.name = form.cleaned_data['name']
+            screener.save_screeners(form.questions_as_dict())
+            return HttpResponse(str(screener.id))
+    else:
+        pass
+    return render(request, 'screener/edit.html', {'form': form})

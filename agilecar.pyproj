@@ -3,28 +3,27 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c8a62fff-8f66-4031-b3ab-737b90a37138}</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>agilecar.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <ProjectGuid>{94fdb708-0556-475a-ac61-3ce8dac265e8}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>agilecar</Name>
-    <RootNamespace>agilecar</RootNamespace>
-    <InterpreterId>{d968266f-5586-4995-b940-7dac76e006b2}</InterpreterId>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <InterpreterId>{fdfde459-247b-424c-ad54-e69e5fc84b71}</InterpreterId>
     <InterpreterVersion>2.7</InterpreterVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>true</DebugSymbols>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Compile Include="agilecar.py" />
+    <Content Include="reqirements.txt" />
+    <Compile Include="manage.py" />
+    <Compile Include="agilecar\decorators.py" />
+    <Compile Include="agilecar\forms.py" />
     <Compile Include="agilecar\objectmapper.py" />
     <Compile Include="agilecar\settings.py" />
     <Compile Include="agilecar\urls.py" />
@@ -32,67 +31,117 @@
     <Compile Include="agilecar\wsgi.py" />
     <Compile Include="agilecar\__init__.py" />
     <Compile Include="application\admin.py" />
-    <Compile Include="application\migrations\__init__.py" />
     <Compile Include="application\models.py" />
     <Compile Include="application\tests.py" />
     <Compile Include="application\urls.py" />
     <Compile Include="application\views.py" />
     <Compile Include="application\__init__.py" />
+    <Compile Include="export\admin.py" />
+    <Compile Include="export\models.py" />
+    <Compile Include="export\tests.py" />
+    <Compile Include="export\views.py" />
+    <Compile Include="export\__init__.py" />
     <Compile Include="jobposting\admin.py" />
     <Compile Include="jobposting\forms.py" />
-    <Compile Include="jobposting\migrations\__init__.py" />
     <Compile Include="jobposting\models.py" />
     <Compile Include="jobposting\tests.py" />
     <Compile Include="jobposting\urls.py" />
     <Compile Include="jobposting\views.py" />
     <Compile Include="jobposting\__init__.py" />
-    <Compile Include="manage.py" />
     <Compile Include="screener\admin.py" />
     <Compile Include="screener\forms.py" />
-    <Compile Include="screener\migrations\__init__.py" />
     <Compile Include="screener\models.py" />
     <Compile Include="screener\screeners.py" />
     <Compile Include="screener\tests.py" />
     <Compile Include="screener\urls.py" />
     <Compile Include="screener\views.py" />
     <Compile Include="screener\__init__.py" />
+    <Content Include="screener\templates\screener\edit.html" />
+    <Content Include="templates\base.html" />
+    <Content Include="templates\login.html" />
+    <Content Include="templates\register.html" />
+    <Compile Include="application\migrations\0001_initial.py" />
+    <Compile Include="application\migrations\__init__.py" />
+    <Content Include="application\static\application\css\site.css" />
+    <Content Include="application\static\application\js\jquery.js" />
+    <Compile Include="export\migrations\__init__.py" />
+    <Compile Include="jobposting\migrations\0001_initial.py" />
+    <Compile Include="jobposting\migrations\0002_auto_20141002_1245.py" />
+    <Compile Include="jobposting\migrations\0003_job_screener.py" />
+    <Compile Include="jobposting\migrations\__init__.py" />
+    <Content Include="jobposting\templates\jobposting\apply.html" />
+    <Content Include="jobposting\templates\jobposting\index.html" />
+    <Content Include="jobposting\templates\jobposting\postjob.html" />
+    <Content Include="jobposting\templates\jobposting\search.html" />
+    <Content Include="jobposting\templates\jobposting\view.html" />
+    <Compile Include="screener\migrations\0001_initial.py" />
+    <Compile Include="screener\migrations\0002_screener_job.py" />
+    <Compile Include="screener\migrations\0003_auto_20141002_1252.py" />
+    <Compile Include="screener\migrations\0004_auto_20141002_1533.py" />
+    <Compile Include="screener\migrations\0005_auto_20141002_1559.py" />
+    <Compile Include="screener\migrations\0006_auto_20141003_2140.py" />
+    <Compile Include="screener\migrations\0007_auto_20141004_1244.py" />
+    <Compile Include="screener\migrations\0008_auto_20141004_1258.py" />
+    <Compile Include="screener\migrations\__init__.py" />
+    <Content Include="screener\static\screener\css\createscreener.css" />
+    <Content Include="screener\templates\screener\create.html" />
+    <Content Include="static\agilecar\css\bootstrap-theme.css" />
+    <Content Include="static\agilecar\css\bootstrap-theme.min.css" />
+    <Content Include="static\agilecar\css\bootstrap.css" />
+    <Content Include="static\agilecar\css\bootstrap.min.css" />
+    <Content Include="static\agilecar\css\site.css" />
+    <Content Include="static\agilecar\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\agilecar\js\bootstrap.js" />
+    <Content Include="static\agilecar\js\bootstrap.min.js" />
+    <Content Include="static\agilecar\js\jquery.js" />
+    <Content Include="static\agilecar\js\screeners.js" />
+    <Content Include="templates\agilecar\index.html" />
+    <Content Include="templates\agilecar\_login.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="agilecar\" />
-    <Folder Include="agilecar\templates\" />
-    <Folder Include="agilecar\templates\agilecar\" />
-    <Folder Include="application\" />
-    <Folder Include="application\migrations\" />
+    <Folder Include="agilecar" />
+    <Folder Include="application" />
+    <Folder Include="application\migrations" />
     <Folder Include="application\static\" />
     <Folder Include="application\static\application\" />
-    <Folder Include="application\static\application\css\" />
-    <Folder Include="application\static\application\js\" />
-    <Folder Include="application\templates\" />
-    <Folder Include="application\templates\application\" />
-    <Folder Include="jobposting\" />
-    <Folder Include="jobposting\migrations\" />
-    <Folder Include="jobposting\static\" />
-    <Folder Include="jobposting\static\jobposting\" />
-    <Folder Include="jobposting\static\jobposting\css\" />
-    <Folder Include="jobposting\static\jobposting\js\" />
+    <Folder Include="application\static\application\css" />
+    <Folder Include="application\static\application\js" />
+    <Folder Include="export" />
+    <Folder Include="export\migrations" />
+    <Folder Include="jobposting" />
+    <Folder Include="jobposting\migrations" />
     <Folder Include="jobposting\templates\" />
-    <Folder Include="jobposting\templates\jobposting\" />
-    <Folder Include="screener\" />
-    <Folder Include="screener\migrations\" />
+    <Folder Include="jobposting\templates\jobposting" />
+    <Folder Include="screener" />
+    <Folder Include="screener\migrations" />
     <Folder Include="screener\static\" />
     <Folder Include="screener\static\screener\" />
-    <Folder Include="screener\static\screener\css\" />
-    <Folder Include="screener\static\screener\js\" />
+    <Folder Include="screener\static\screener\css" />
     <Folder Include="screener\templates\" />
-    <Folder Include="screener\templates\screener\" />
+    <Folder Include="screener\templates\screener" />
     <Folder Include="static\" />
     <Folder Include="static\agilecar\" />
-    <Folder Include="static\agilecar\css\" />
-    <Folder Include="static\agilecar\js\" />
+    <Folder Include="static\agilecar\css" />
+    <Folder Include="static\agilecar\fonts" />
+    <Folder Include="static\agilecar\js" />
+    <Folder Include="templates" />
+    <Folder Include="templates\agilecar" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebPiReference Include="https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml%3fDjango">
+      <Feed>https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml</Feed>
+      <ProductId>Django</ProductId>
+      <FriendlyName>Django 1.4</FriendlyName>
+    </WebPiReference>
+    <WebPiReference Include="https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml%3fPytho27">
+      <Feed>https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml</Feed>
+      <ProductId>Python27</ProductId>
+      <FriendlyName>Python 2.7</FriendlyName>
+    </WebPiReference>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="..\">
-      <Id>{d968266f-5586-4995-b940-7dac76e006b2}</Id>
+      <Id>{fdfde459-247b-424c-ad54-e69e5fc84b71}</Id>
       <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
       <Version>2.7</Version>
       <Description>agilecar (Python 2.7)</Description>
@@ -102,20 +151,45 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
     </Interpreter>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="agilecar\templates\agilecar\index.html" />
-    <Content Include="application\templates\application\apply.html" />
-    <Content Include="jobposting\templates\jobposting\index.html" />
-    <Content Include="jobposting\templates\jobposting\postjob.html" />
-    <Content Include="jobposting\templates\jobposting\search.html" />
-    <Content Include="jobposting\templates\jobposting\view.html" />
-    <Content Include="static\agilecar\css\site.css" />
-    <Content Include="static\agilecar\js\jquery.js" />
-    <Content Include="agilecar\templates\agilecar\base.html" />
-    <Content Include="application\templates\base.html" />
-    <Content Include="screener\static\screener\css\createscreener.css" />
-    <Content Include="static\agilecar\js\screeners.js" />
-    <Content Include="screener\templates\screener\create.html" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>42851</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     #auth urls
     url(r'^account/login/$', 'agilecar.views.login'),
     url(r'^account/register/$', 'agilecar.views.register'),
-    #url(r'^account/logout/$', 'agilecar.views.logout'),
+    url(r'^account/logout/$', 'agilecar.views.logout'),
     #url(r'^account/loggedin/$', 'agilecar.views.loggedin'),
     #url(r'^account/invalid/$', 'agilecar.views.invalid_login'),
 )

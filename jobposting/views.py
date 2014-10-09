@@ -77,9 +77,16 @@ def search(request, context = {}):
     if request.method == 'POST':
         form = forms.JobSearchForm(request.POST)
         if form.is_valid():
-            jobs = Job.objects.filter(description__contains = form.cleaned_data['key_words'])
+            jobs = dict()
+            filtered_jobs = None
+            for key_word in form.cleaned_data['key_words'].split(','):
+                filtered_jobs = Job.objects.filter(description__contains = key_word)
+                if filtered_jobs is not None:
+                    for job in filtered_jobs:
+                        if not job.id in jobs:
+                            jobs[job.id] = job
             context['form'] = form
-            context['jobs'] = jobs
+            context['jobs'] = jobs.values()
             return render(request, 'jobposting/search.html', context)
     else:
         form = forms.JobSearchForm()

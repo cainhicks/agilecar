@@ -7,6 +7,11 @@
     <form action="/jobposting/postajob/" method="post">
         {% csrf_token %}
         {{ form.as_p }}
+        <div class="row">
+            <div class="col-md-4">
+                <label for="{{ form.title }}">Title</label>
+            </div>
+        </div>
         <br />
         <hr />
         <input type="button" id="btnAddScreener" name="btnAddScreener" value="Add Screener Question" />

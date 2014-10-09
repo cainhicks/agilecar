@@ -68,3 +68,6 @@ def load_screener(id):
         question.answers = ScreenerAnswer.objects.filter(screener_question__id = question.id)
     screener.questions = questions
     return screener
+
+def edit(request, screener_id):
+    pass
